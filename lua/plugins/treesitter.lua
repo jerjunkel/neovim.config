@@ -7,7 +7,7 @@ return {
           ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript", "html" },
           sync_install = false,
           highlight = { enable = true },
-          indent = { enable = true },  
+          indent = { enable = true },
         })
     end
   }
