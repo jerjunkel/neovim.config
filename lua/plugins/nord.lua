@@ -1,9 +1,9 @@
 return {
-   "shaunsingh/nord.nvim", 
-   name = "nord", 
-   priority = 1000, 
-   lazy = false,
-   config = function()
-      vim.cmd.colorscheme "nord"
-    end
+	"gbprod/nord.nvim",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		require("nord").setup({})
+		vim.cmd.colorscheme("nord")
+	end,
 }
