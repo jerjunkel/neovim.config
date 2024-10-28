@@ -7,7 +7,7 @@ return {
 			lsp_zero.extend_lspconfig()
 			require("mason").setup()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "tsserver", "cssls", "emmet_ls" },
+				ensure_installed = { "lua_ls", "ts_ls", "cssls", "emmet_ls" },
 			})
 			lsp_zero.on_attach(function(client, bufnr)
 				lsp_zero.default_keymaps({ buffer = bufnr })
