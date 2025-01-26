@@ -16,7 +16,7 @@ return {
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities.textDocument.completion.completionItem.snippetSupport = true
 			lspconfig.lua_ls.setup({})
-			lspconfig.tsserver.setup({})
+			lspconfig.ts_ls.setup({})
 			lspconfig.cssls.setup({})
 			lspconfig.emmet_ls.setup({
 				capabilities = capabilities,
