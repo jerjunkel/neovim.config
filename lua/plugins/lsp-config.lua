@@ -44,6 +44,12 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.volar.setup({
+				init_options = {
+					typescript = {
+						tsdk = os.getenv("HOME")
+							.. "/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
+					},
+				},
 				capabilities = capabilities,
 			})
 			lspconfig.cssls.setup({
