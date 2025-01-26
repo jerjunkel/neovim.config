@@ -18,6 +18,25 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
+
+			vim.api.nvim_create_autocmd("LspAttach", {
+				desc = "LSP actions",
+				callback = function(event)
+					local opts = { buffer = event.buf }
+
+					vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+					vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
+					vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {})
+					vim.keymap.set("n", "go", vim.lsp.buf.type_definition, {})
+					vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
+					vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, {})
+					vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, {})
+					vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
+					vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+				end,
+			})
+
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
