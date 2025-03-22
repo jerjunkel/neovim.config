@@ -11,6 +11,7 @@ return {
 				scss = { "prettierd" },
 				javascript = { "prettierd", "prettier", stop_after_first = true },
 				typescript = { "prettierd", "prettier", stop_after_first = true },
+				go = { "golines" },
 			},
 			format_on_save = {
 				timeout_ms = 500,

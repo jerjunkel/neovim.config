@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "ts_ls", "cssls", "emmet_ls", "volar" },
+				ensure_installed = { "lua_ls", "ts_ls", "cssls", "emmet_ls", "volar", "gopls" },
 			})
 		end,
 	},
@@ -50,6 +50,9 @@ return {
 							.. "/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib",
 					},
 				},
+				capabilities = capabilities,
+			})
+			lspconfig.gopls.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.cssls.setup({
