@@ -21,7 +21,6 @@ return {
 		}
 		dap.configurations.javascript = {
 			{
-
 				type = "pwa-node",
 				request = "launch",
 				name = "Launch file",
@@ -41,11 +40,24 @@ return {
 		dap.listeners.before.event_exited.dapui_config = function()
 			dapui.close()
 		end
+
 		vim.keymap.set("n", "<Leader>dc", function()
 			dap.continue()
 		end)
-		vim.keymap.set("n", "<Leader>dt", function()
+		vim.keymap.set("n", "<Leader>db", function()
 			dap.toggle_breakpoint()
+		end)
+		vim.keymap.set("n", "<Leader>di", function()
+			dap.step_into()
+		end)
+		vim.keymap.set("n", "<Leader>do", function()
+			dap.step_out()
+		end)
+		vim.keymap.set("n", "<Leader>dO", function()
+			dap.step_over()
+		end)
+		vim.keymap.set("n", "<Leader>dt", function()
+			dap.terminate()
 		end)
 	end,
 }
