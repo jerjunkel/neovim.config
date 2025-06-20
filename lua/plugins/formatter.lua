@@ -12,7 +12,7 @@ return {
         javascript = { "prettierd", "prettier", stop_after_first = true },
         typescript = { "prettierd", "prettier", stop_after_first = true },
         go = { "golines" },
-        sql = { "sql_formater" }
+        sql = { "sql_formatter" }
       },
       format_on_save = {
         timeout_ms = 500,
