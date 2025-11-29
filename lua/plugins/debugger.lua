@@ -28,6 +28,25 @@ return {
 				cwd = "${workspaceFolder}",
 			},
 		}
+		dap.configurations.typescript = {
+			{
+				type = "pwa-node",
+				request = "launch",
+				name = "Launch program (pwa-node with ts-node)",
+				program = "",
+				cwd = "${workspaceFolder}",
+				runtimeArgs = { "--loader", "ts-node/esm" },
+				runtimeExecutable = "node",
+				args = { "${file}" },
+				sourceMaps = true,
+				protocol = "inspector",
+				skipFiles = { "<node_internals>/**", "node_modules/**" },
+				resolveSourceMapLocations = {
+					"${workspaceFolder}/**",
+					"!**/node_modules/**",
+				},
+			},
+		}
 		dap.listeners.before.attach.dapui_config = function()
 			dapui.open()
 		end
