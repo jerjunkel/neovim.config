@@ -90,6 +90,13 @@ return {
           },
         },
       })
+
+      vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+        pattern = { "docker-compose.yaml", "docker-compose.yml", "compose.yaml", "compose.yml" },
+        callback = function()
+          vim.opt.filetype = "yaml.docker-compose"
+        end,
+      })
     end,
   },
 }
